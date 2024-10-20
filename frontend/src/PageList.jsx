@@ -7,6 +7,8 @@ import MessagePage from './components/msger/MessagePage';
 import PopQuote from './popQuote/PopQuote';
 import Dashboard from './Dashboard';
 import Lover from './lover/Lover';
+import Thing from './bolleyBoll/thing';
+import Confess from './confess/Confess';
 
 // import { ThemeContext } from './ThemeContext';
 
@@ -46,7 +48,8 @@ const PageList = () => {
         <Route path="/Quotes" element={<PopQuote />} />
         {/* <Route path='/game/math' element={<Maths/>} />*/}
         <Route path="/lover" element={<Lover />} />
-        <Route path="/message" element={<MessagePage />} />
+        <Route path="/confess" element={<Confess />} />
+        <Route path="/thing" element={<Thing />} />
       </Routes>
 
       {/* </div> */}

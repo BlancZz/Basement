@@ -38,6 +38,26 @@ function Dashboard() {
             <Card
               id="dashboard-form"
               className="d-flex justify-content-center align-items-center"
+              sx={{ cursor: 'pointer' }}
+              onClick={() => {
+                navigate('/confess');
+              }}
+            >
+              <img
+                style={{
+                  maxWidth: '100%',
+                  overflow: 'hidden',
+                }}
+                sx={{ overflow: 'hidden' }}
+                src={require('./assets/plsplsplsCard3.png')}
+                alt="confess"
+              />
+            </Card>
+          </BrowserWindow>
+          <BrowserWindow>
+            <Card
+              id="dashboard-form"
+              className="d-flex justify-content-center align-items-center"
               onClick={() => {
                 navigate('/Quotes');
               }}
@@ -85,6 +105,15 @@ function Dashboard() {
               />
             </Card>
           </BrowserWindow>
+        </Box>
+        <Box
+          sx={{
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'space-around',
+          }}
+        >
+          <BrowserWindow></BrowserWindow>
           <BrowserWindow>
             <Card
               id="dashboard-form"
@@ -107,7 +136,9 @@ function Dashboard() {
               />
             </Card>
           </BrowserWindow>
+          <BrowserWindow></BrowserWindow>
         </Box>
+
         <footer
           className="position-fixed w-100 text-center p-3 b-0"
           style={{ color: /*mode === 'dark' ? '#faf0e6' :*/ '#0D0D0D' }}

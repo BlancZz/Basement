@@ -98,7 +98,7 @@ const NavBar = () => {
             class="navbar-brand"
             href="#"
           >
-            Binco tings
+            Binco's Basement
           </a>
           <button
             class="navbar-toggler"
