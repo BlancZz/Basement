@@ -49,8 +49,8 @@ const Confess = () => {
     'go on a ferry ride',
     'visit a bookstore (like Kino) and pick out books for each other',
     'visit Taronga Zoo',
-    'visit the aquarium'
-    'play some coop games'
+    'visit the aquarium',
+    'play some coop games',
     'paint together and switch boards every few minutes',
     'crochet together',
     'have an anime/Kdrama marathon night',
