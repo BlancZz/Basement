@@ -23,38 +23,37 @@ const Confess = () => {
 
   // Define predefined romantic date ideas
   const dateIdeas = [
-    'Cook dinner together',
-    'Go for a moonlit walk on the beach',
-    'Have a picnic in the park',
-    'Lean a dance together',
-    'Explore a botanical garden',
-    'Attend a live outdoor concert',
-    'Visit an art gallery',
-    'Go on a weekend getaway to a cozy cabin',
-    'Plan a movie marathon night at home',
+    'cook dinner together',
+    'go for a moonlit walk on the beach',
+    'have a picnic in the park',
+    'learn a dance together',
+    'explore a botanical garden',
+    'attend a concert',
+    'visit an art gallery',
+    'have a sleepover',
+    'run a movie marathon night at home',
     // 'Take a scenic train ride',
-    'Go to a cat cafe',
-    'Go on a shopping trip together',
-    'Attend a musical',
-    "Attend a farmers' market",
-    'Explore a museum',
-    'Have a boar games night at home',
-    'Go on a bike ride together',
-    'Plan a themed dinner night at home',
-    'Attend a live theater performance',
-    'Go on a scenic drive',
-    'Visit a local chocolate or dessert shop',
-    'Take a pottery or ceramics class',
-    'Attend a local sports game',
-    'Sports sports sports? Badminton volleyball table tennis pool?',
-    'Have a karaoke night at home',
-    'Go on a scenic ferry ride',
-    'Visit a local bookstore and pick out books for each other, kino?',
-    'Taronga zoo?',
-    'Painting together where you switch boards every few minutes',
-    'Crochetting together',
-    'Anime marathon night',
-    'Meet up for a local video games night',
+    'go to a cat cafe',
+    'go on a shopping trip together',
+    'attend a musical',
+    'visit a museum',
+    'have a board games night at home',
+    'go on a bike ride together',
+    'plan a themed dinner night at home',
+    'attend a theatre performance',
+    'go on a scenic drive',
+    'visit a cafe or dessert shop',
+    'take an art or ceramics class',
+    'do some sports? Sports sports sports? Badminton, volleyball, table tennis, pool',
+    'have a karaoke night at home',
+    'go on a ferry ride',
+    'visit a bookstore (like Kino) and pick out books for each other',
+    'visit Taronga Zoo',
+    'visit the aquarium'
+    'play some coop games'
+    'paint together and switch boards every few minutes',
+    'crochet together',
+    'have an anime/Kdrama marathon night',
   ];
 
   const handleYesClick = () => {
@@ -66,7 +65,7 @@ const Confess = () => {
       const randomIndex = Math.floor(Math.random() * dateIdeas.length);
       const selectedDateIdea = dateIdeas[randomIndex];
 
-      alert(`How about this romantic date idea: ${selectedDateIdea}`);
+      alert(`Wanna ${selectedDateIdea}?`);
     }
   };
 
