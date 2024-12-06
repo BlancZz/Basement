@@ -34,7 +34,7 @@ function Dashboard() {
             justifyContent: 'space-around',
           }}
         >
-          <BrowserWindow>
+          <BrowserWindow value="2">
             <Card
               id="dashboard-form"
               className="d-flex justify-content-center align-items-center"
@@ -54,7 +54,7 @@ function Dashboard() {
               />
             </Card>
           </BrowserWindow>
-          <BrowserWindow>
+          <BrowserWindow value="2">
             <Card
               id="dashboard-form"
               className="d-flex justify-content-center align-items-center"
@@ -85,7 +85,7 @@ function Dashboard() {
             </Card>
           </BrowserWindow>
 
-          <BrowserWindow>
+          <BrowserWindow value="1">
             <Card
               id="dashboard-form"
               className="d-flex justify-content-center align-items-center"
@@ -113,8 +113,8 @@ function Dashboard() {
             justifyContent: 'space-around',
           }}
         >
-          <BrowserWindow></BrowserWindow>
-          <BrowserWindow>
+          <BrowserWindow value="0"></BrowserWindow>
+          <BrowserWindow value="1">
             <Card
               id="dashboard-form"
               className="d-flex justify-content-center align-items-center"
@@ -136,7 +136,26 @@ function Dashboard() {
               />
             </Card>
           </BrowserWindow>
-          <BrowserWindow></BrowserWindow>
+          <BrowserWindow value="0">
+            <Card
+              id="dashboard-form"
+              className="d-flex justify-content-center align-items-center"
+              onClick={() => {
+                navigate('/Timer');
+              }}
+              sx={{ cursor: 'pointer' }}
+            >
+              <img
+                style={{
+                  maxWidth: '100%',
+                  overflow: 'hidden',
+                }}
+                sx={{ overflow: 'hidden' }}
+                // src={require('./assets/timer.png')}
+                alt="timer"
+              />
+            </Card>
+          </BrowserWindow>
         </Box>
 
         <footer

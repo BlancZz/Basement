@@ -3,7 +3,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useTheme } from '../ThemeContext';
 
-const BrowserWindow = ({ children }) => {
+const BrowserWindow = ({ value, children }) => {
   const { mode } = useTheme();
 
   return (
@@ -37,15 +37,35 @@ const BrowserWindow = ({ children }) => {
           boxSizing: 'border-box',
         }}
       >
-        <FavoriteIcon
-          sx={{ color: mode === 'light' ? '#EE79C6' : '#9F7CD7' }}
-        />
-        <FavoriteIcon
-          sx={{ color: mode === 'light' ? '#EE79C6' : '#9F7CD7' }}
-        />
-        <FavoriteBorderIcon
-          sx={{ color: mode === 'light' ? '#EE79C6' : '#9F7CD7' }}
-        />
+        {parseInt(value) >= 1 ? (
+          <FavoriteIcon
+            sx={{ color: mode === 'light' ? '#EE79C6' : '#9F7CD7' }}
+          />
+        ) : (
+          <FavoriteBorderIcon
+            sx={{ color: mode === 'light' ? '#EE79C6' : '#9F7CD7' }}
+          />
+        )}
+
+        {parseInt(value) >= 2 ? (
+          <FavoriteIcon
+            sx={{ color: mode === 'light' ? '#EE79C6' : '#9F7CD7' }}
+          />
+        ) : (
+          <FavoriteBorderIcon
+            sx={{ color: mode === 'light' ? '#EE79C6' : '#9F7CD7' }}
+          />
+        )}
+
+        {parseInt(value) >= 3 ? (
+          <FavoriteIcon
+            sx={{ color: mode === 'light' ? '#EE79C6' : '#9F7CD7' }}
+          />
+        ) : (
+          <FavoriteBorderIcon
+            sx={{ color: mode === 'light' ? '#EE79C6' : '#9F7CD7' }}
+          />
+        )}
       </Box>
       <Box
         sx={{

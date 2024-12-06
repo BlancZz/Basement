@@ -460,6 +460,11 @@ body {
   --bgColor: #bc90fe;
   --color: rgb(255, 255, 255);
   --defaultAnimationState: running;
+
+  --x-offset: 125px;
+  --y-offset: 50px;
+  --animation-duration: 3s;
+  --fade-in-delay: 1.5s;
 }
 
 #heart-title-container {
@@ -676,4 +681,417 @@ body {
 
 #confessTitle:hover:before {
   transform: translateX(10px);
+}
+
+.timer-text {
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+}
+
+.heart-timer {
+  animation: heart-beat 1.5s infinite;
+}
+
+@keyframes heart-beat {
+  25% {
+    scale: 90%;
+  }
+
+  40% {
+    scale: 110%;
+  }
+
+  55% {
+    scale: 90%;
+  }
+
+  60% {
+    scale: 110%;
+  }
+}
+
+.air-timer {
+  animation: left-right 1.5s infinite;
+}
+
+@keyframes left-right {
+  0% {
+    transform: translateX(-10px);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+#x {
+  --name: horizontal;
+  --duration: var(--animation-duration);
+  --delay: calc(-0.25 * var(--animation-duration));
+}
+#y {
+  --name: vertical;
+  --duration: calc(0.5 * var(--animation-duration));
+  --delay: 0s;
+}
+
+#x2 {
+  --name: horizontal;
+  --duration: var(--animation-duration);
+  --delay: calc(-0.15 * var(--animation-duration));
+}
+#y2 {
+  --name: vertical;
+  --duration: calc(0.35 * var(--animation-duration));
+  --delay: 0s;
+}
+
+#x,
+#y {
+  --animation: var(--duration) ease-in-out var(--delay) alternate infinite
+    var(--name);
+}
+
+#x2,
+#y2 {
+  --animation: var(--duration) ease-in-out var(--delay) alternate infinite
+    var(--name);
+}
+
+@keyframes vertical {
+  from {
+    transform: translateY(calc(-1 * var(--y-offset)));
+  }
+  to {
+    transform: translateY(var(--y-offset));
+  }
+}
+@keyframes horizontal {
+  from {
+    transform: translateX(calc(-1 * var(--x-offset)));
+  }
+  to {
+    transform: translateX(var(--x-offset));
+  }
+}
+
+#x,
+#y {
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 72px;
+  line-height: 1em;
+  border: 3px solid transparent;
+  animation: var(--animation),
+    10s var(--fade-in-delay) cubic-bezier(0.75, 0, 0.55, 0.95) forwards
+      fade-in-details;
+}
+
+#x2,
+#y2 {
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 72px;
+  line-height: 1em;
+  border: 3px solid transparent;
+  animation: var(--animation),
+    8s var(--fade-in-delay) cubic-bezier(0.75, 0, 0.55, 0.95) forwards
+      fade-in-details;
+}
+
+#baby {
+  animation: wobble 1s ease infinite;
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+
+  15% {
+    -webkit-transform: translateX(-32px) rotate(-10deg);
+    transform: translateX(-32px) rotate(-10deg);
+  }
+
+  30% {
+    -webkit-transform: translateX(calc(32px / 2)) rotate(10deg);
+    transform: translateX(calc(32px / 2)) rotate(10deg);
+  }
+
+  45% {
+    -webkit-transform: translateX(calc(-32px / 2)) rotate(calc(-10deg / 1.8));
+    transform: translateX(calc(-32px / 2)) rotate(calc(-10deg / 1.8));
+  }
+
+  60% {
+    -webkit-transform: translateX(calc(32px / 3.3)) rotate(calc(10deg / 3));
+    transform: translateX(calc(32px / 3.3)) rotate(calc(10deg / 3));
+  }
+
+  75% {
+    -webkit-transform: translateX(calc(-32px / 5.5)) rotate(calc(-10deg / 5));
+    transform: translateX(calc(-32px / 5.5)) rotate(calc(-10deg / 5));
+  }
+}
+
+.solar-timer {
+  width: 330px;
+  height: 330px;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  margin: auto;
+  animation: circular 6s linear infinite;
+}
+
+@keyframes circular {
+  0% {
+    transform: rotate(0deg) translate(-165px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translate(-165px) rotate(-360deg);
+  }
+}
+
+.earth-spin {
+  animation: ease-spin 6s ease-in-out infinite;
+}
+
+@keyframes ease-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1440deg);
+  }
+}
+
+.galaxy-spin {
+  animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.moon-spin {
+  animation: reverse-spin 15s linear infinite;
+}
+
+@keyframes reverse-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.star-timer1 {
+  animation: grow-shrink 5s linear infinite;
+}
+
+.star-timer2 {
+  animation: grow-shrink 4s linear infinite;
+}
+
+.star-timer3 {
+  animation: grow-shrink 2s linear infinite;
+}
+
+@keyframes grow-shrink {
+  0% {
+    scale: 100%;
+  }
+
+  25% {
+    scale: 90%;
+  }
+
+  50% {
+    scale: 100%;
+  }
+
+  75% {
+    scale: 110%;
+  }
+
+  100% {
+    scale: 100%;
+  }
+}
+
+.sandglass-timer {
+  animation: sand-glass 6s linear infinite;
+}
+
+@keyframes sand-glass {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  15% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  65% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.jump-timer1 {
+  animation: jump1 2s linear infinite;
+}
+.jump-timer2 {
+  animation: jump2 2s linear infinite;
+}
+.jump-timer3 {
+  animation: jump3 2s linear infinite;
+}
+.jump-timer4 {
+  animation: jump4 2s linear infinite;
+}
+.jump-timer5 {
+  animation: jump5 2s linear infinite;
+}
+.jump-timer6 {
+  animation: jump5 2s linear infinite;
+}
+
+@keyframes jump1 {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-50px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes jump2 {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  40% {
+    transform: translateY(-50px);
+  }
+
+  90% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes jump3 {
+  0% {
+    transform: translateY(-20px);
+  }
+
+  30% {
+    transform: translateY(-50px);
+  }
+
+  80% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes jump4 {
+  0% {
+    transform: translateY(-30px);
+  }
+
+  20% {
+    transform: translateY(-50px);
+  }
+
+  70% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-30px);
+  }
+}
+@keyframes jump5 {
+  0% {
+    transform: translateY(-40px);
+  }
+
+  10% {
+    transform: translateY(-50px);
+  }
+
+  60% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes jump6 {
+  0% {
+    transform: translateY(-50px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-50px);
+  }
 }

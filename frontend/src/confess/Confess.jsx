@@ -21,7 +21,6 @@ const Confess = () => {
 
   const [initY, setInitY] = React.useState(-1);
 
-  // Define predefined romantic date ideas
   const dateIdeas = [
     'cook dinner together',
     'go for a moonlit walk on the beach',
