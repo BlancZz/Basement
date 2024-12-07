@@ -1,16 +1,15 @@
 'use client';
 import React from 'react';
-// import NavBar from './NavBar';
 import { useNavigate } from 'react-router-dom';
-import { useTheme } from '../ThemeContext';
+// import { useTheme } from '../ThemeContext';
 
 import Box from '@mui/material/Box';
 
-import Snackbar from '@mui/material/Snackbar';
+// import Snackbar from '@mui/material/Snackbar';
 
 const Timer = () => {
   const navigate = useNavigate();
-  const { mode } = useTheme();
+  // const { mode } = useTheme();
 
   const min = 60;
   const hr = 60 * min;
@@ -193,10 +192,10 @@ const Timer = () => {
       }}
     >
       <Box
+        id="opacity-banner"
         sx={{
-          backgroundColor: '#accaaf',
           paddingTop: '2rem',
-          height: '35vh',
+          height: '40vh',
           width: '100vw',
           display: 'flex',
           position: 'fixed',
@@ -207,12 +206,28 @@ const Timer = () => {
           fontWeight: 'bold',
         }}
       >
+        <Box
+          sx={{
+            position: 'fixed',
+            top: '0rem',
+            left: '0',
+            typography: 'h3',
+            margin: '1rem',
+            marginLeft: '2rem',
+            cursor: 'pointer',
+          }}
+          onClick={() => {
+            navigate('/');
+          }}
+        >
+          <span class="owText text-center">Timer</span>
+        </Box>
         <h1>Since you've clicked on this page</h1>
         {/* clock */}
         <Box
           sx={{
-            display: scrollPosition < 165 ? 'in-line' : 'none',
-            fontSize: '10rem',
+            display: scrollPosition < 225 ? 'in-line' : 'none',
+            fontSize: '9rem',
           }}
         >
           {clock}
@@ -221,7 +236,7 @@ const Timer = () => {
         <Box
           sx={{
             display:
-              (scrollPosition >= 165) & (scrollPosition < 450)
+              (scrollPosition >= 225) & (scrollPosition < 650)
                 ? 'in-line'
                 : 'none',
             fontSize: '9rem',
@@ -233,7 +248,7 @@ const Timer = () => {
         <Box
           sx={{
             display:
-              (scrollPosition >= 450) & (scrollPosition < 775)
+              (scrollPosition >= 650) & (scrollPosition < 1025)
                 ? 'in-line'
                 : 'none',
             fontSize: '9rem',
@@ -242,7 +257,7 @@ const Timer = () => {
           {/* inhale */}
           <Box
             sx={{
-              display: Math.floor(time) % 2 == 0 ? 'flex' : 'none',
+              display: Math.floor(time) % 2 === 0 ? 'flex' : 'none',
             }}
           >
             <Box>{inhale}</Box>
@@ -260,7 +275,7 @@ const Timer = () => {
           {/* exhale */}
           <Box
             sx={{
-              display: Math.floor(time) % 2 == 1 ? 'flex' : 'none',
+              display: Math.floor(time) % 2 === 1 ? 'flex' : 'none',
             }}
           >
             <Box>{exhale}</Box>
@@ -271,7 +286,7 @@ const Timer = () => {
         <Box
           sx={{
             display:
-              (scrollPosition >= 775) & (scrollPosition < 1070)
+              (scrollPosition >= 1025) & (scrollPosition < 1400)
                 ? 'in-line'
                 : 'none',
             fontSize: '9rem',
@@ -299,7 +314,7 @@ const Timer = () => {
         <Box
           sx={{
             display:
-              (scrollPosition >= 1070) & (scrollPosition < 1365)
+              (scrollPosition >= 1400) & (scrollPosition < 1775)
                 ? 'flex'
                 : 'none',
             fontSize: '9rem',
@@ -313,7 +328,7 @@ const Timer = () => {
         <Box
           sx={{
             display:
-              (scrollPosition >= 1365) & (scrollPosition < 1660)
+              (scrollPosition >= 1775) & (scrollPosition < 2150)
                 ? 'flex'
                 : 'none',
             fontSize: '9rem',
@@ -336,7 +351,7 @@ const Timer = () => {
         <Box
           sx={{
             display:
-              (scrollPosition >= 1660) & (scrollPosition < 2000)
+              (scrollPosition >= 2150) & (scrollPosition < 2650)
                 ? 'in-line'
                 : 'none',
             fontSize: '9rem',
@@ -348,7 +363,7 @@ const Timer = () => {
         <Box
           sx={{
             display:
-              (scrollPosition >= 2000) & (scrollPosition < 2275)
+              (scrollPosition >= 2650) & (scrollPosition < 3025)
                 ? 'in-line'
                 : 'none',
             fontSize: '9rem',
@@ -360,7 +375,7 @@ const Timer = () => {
         <Box
           sx={{
             display:
-              (scrollPosition >= 2275) & (scrollPosition < 2650)
+              (scrollPosition >= 3025) & (scrollPosition < 3400)
                 ? 'in-line'
                 : 'none',
             fontSize: '9rem',
@@ -391,7 +406,7 @@ const Timer = () => {
         <Box
           sx={{
             display:
-              (scrollPosition >= 2650) & (scrollPosition < 2950)
+              (scrollPosition >= 3400) & (scrollPosition < 3775)
                 ? 'in-line'
                 : 'none',
             fontSize: '9rem',
@@ -403,7 +418,7 @@ const Timer = () => {
         <Box
           sx={{
             display:
-              (scrollPosition >= 2950) & (scrollPosition < 3255)
+              (scrollPosition >= 3775) & (scrollPosition < 4150)
                 ? 'in-line'
                 : 'none',
             fontSize: '9rem',
@@ -415,7 +430,7 @@ const Timer = () => {
         <Box
           sx={{
             display:
-              (scrollPosition >= 3255) & (scrollPosition < 3550)
+              (scrollPosition >= 4150) & (scrollPosition < 4525)
                 ? 'flex'
                 : 'none',
             flexDirection: 'column',
@@ -468,7 +483,7 @@ const Timer = () => {
         <Box
           sx={{
             display:
-              (scrollPosition >= 3550) & (scrollPosition < 4150)
+              (scrollPosition >= 4525) & (scrollPosition < 5275)
                 ? 'in-line'
                 : 'none',
             fontSize: '9rem',
@@ -480,7 +495,7 @@ const Timer = () => {
         <Box
           sx={{
             display:
-              (scrollPosition >= 4150) & (scrollPosition < 4750)
+              (scrollPosition >= 5275) & (scrollPosition < 6100)
                 ? 'flex'
                 : 'none',
             justifyContent: 'space-around',
@@ -500,7 +515,7 @@ const Timer = () => {
         {/* end */}
         <Box
           sx={{
-            display: scrollPosition >= 4750 ? 'in-line' : 'none',
+            display: scrollPosition >= 6100 ? 'in-line' : 'none',
             fontSize: '4rem',
           }}
         >
@@ -529,28 +544,12 @@ const Timer = () => {
               : accuracy >= 2 * min
               ? ' minutes '
               : ''}
-            {accuracy % min}
-            seconds have passed
+            {accuracy % min} seconds have passed
           </Box>
         </Box>
         {/* <Box sx={{ fontSize: '1rem' }}>{scrollPosition}</Box> */}
       </Box>
-      <Box
-        sx={{
-          position: 'fixed',
-          top: '0rem',
-          left: '0',
-          typography: 'h3',
-          margin: '1rem',
-          marginLeft: '2rem',
-          cursor: 'pointer',
-        }}
-        onClick={() => {
-          navigate('/');
-        }}
-      >
-        <span class="owText text-center">Timer</span>
-      </Box>
+
       <Box
         sx={{
           marginTop: '40vh',
@@ -686,7 +685,12 @@ const Timer = () => {
         <Box class="timer-text">for happiness...</Box>
         <Box class="timer-text">for memories...</Box>
         <Box class="timer-text">for wondering what could've been.</Box>
-        <Box class="timer-text">
+        <Box
+          sx={{
+            marginTop: '175px',
+            marginBottom: '325px',
+          }}
+        >
           thank you for spending time here, don't forget to spend the rest of
           your time better.
         </Box>

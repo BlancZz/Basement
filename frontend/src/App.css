@@ -683,9 +683,18 @@ body {
   transform: translateX(10px);
 }
 
+#opacity-banner {
+  background: linear-gradient(
+    to bottom,
+    rgba(171, 186, 175, 1) 0%,
+    rgba(171, 186, 175, 1) 65%,
+    rgba(171, 186, 175, 0) 100%
+  );
+}
+
 .timer-text {
-  margin-top: 15vh;
-  margin-bottom: 15vh;
+  margin-top: 175px;
+  margin-bottom: 175px;
 }
 
 .heart-timer {
