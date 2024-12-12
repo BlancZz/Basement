@@ -790,11 +790,6 @@ body {
 
 #x,
 #y {
-  box-sizing: border-box;
-  text-align: center;
-  font-size: 72px;
-  line-height: 1em;
-  border: 3px solid transparent;
   animation: var(--animation),
     10s var(--fade-in-delay) cubic-bezier(0.75, 0, 0.55, 0.95) forwards
       fade-in-details;
@@ -802,11 +797,6 @@ body {
 
 #x2,
 #y2 {
-  box-sizing: border-box;
-  text-align: center;
-  font-size: 72px;
-  line-height: 1em;
-  border: 3px solid transparent;
   animation: var(--animation),
     8s var(--fade-in-delay) cubic-bezier(0.75, 0, 0.55, 0.95) forwards
       fade-in-details;

@@ -14,6 +14,32 @@ function Dashboard() {
 
   const [popOpen, setPopOpen] = useState(false);
 
+  const [clockIndex, setClockIndex] = React.useState(0);
+  const [clock, setClock] = React.useState('🕛');
+  const clocks = [
+    '🕛',
+    '🕐',
+    '🕑',
+    '🕒',
+    '🕓',
+    '🕔',
+    '🕕',
+    '🕖',
+    '🕗',
+    '🕘',
+    '🕙',
+    '🕚',
+  ];
+
+  React.useEffect(() => {
+    const clockInterval = setInterval(() => {
+      setClock(clocks[clockIndex]);
+      setClockIndex((clockIndex + 1) % 12);
+    }, 1000);
+
+    return () => clearInterval(clockInterval);
+  }, [clockIndex]);
+
   return (
     <>
       <NavBar />
@@ -85,7 +111,7 @@ function Dashboard() {
             </Card>
           </BrowserWindow>
 
-          <BrowserWindow value="1">
+          <BrowserWindow value="0">
             <Card
               id="dashboard-form"
               className="d-flex justify-content-center align-items-center"
@@ -113,7 +139,38 @@ function Dashboard() {
             justifyContent: 'space-around',
           }}
         >
-          <BrowserWindow value="0"></BrowserWindow>
+          <BrowserWindow value="2">
+            <Card
+              id="dashboard-form"
+              onClick={() => {
+                navigate('/Timer');
+              }}
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                cursor: 'pointer',
+                height: '100%',
+                width: '100%',
+                backgroundColor: '#abbaaf',
+                color: '#abbaaf',
+                border: 1,
+                borderColor: '#fff',
+                fontSize: '7rem',
+              }}
+            >
+              {clock}
+              {/* <img
+                style={{
+                  maxWidth: '100%',
+                  overflow: 'hidden',
+                }}
+                sx={{ overflow: 'hidden' }}
+                // src={require('./assets/timer.png')}
+                alt="timer"
+              /> */}
+            </Card>
+          </BrowserWindow>
           <BrowserWindow value="1">
             <Card
               id="dashboard-form"
@@ -136,31 +193,12 @@ function Dashboard() {
               />
             </Card>
           </BrowserWindow>
-          <BrowserWindow value="0">
-            <Card
-              id="dashboard-form"
-              className="d-flex justify-content-center align-items-center"
-              onClick={() => {
-                navigate('/Timer');
-              }}
-              sx={{ cursor: 'pointer' }}
-            >
-              <img
-                style={{
-                  maxWidth: '100%',
-                  overflow: 'hidden',
-                }}
-                sx={{ overflow: 'hidden' }}
-                // src={require('./assets/timer.png')}
-                alt="timer"
-              />
-            </Card>
-          </BrowserWindow>
+          <BrowserWindow value="0"></BrowserWindow>
         </Box>
 
         <footer
           className="position-fixed w-100 text-center p-3 b-0"
-          style={{ color: /*mode === 'dark' ? '#faf0e6' :*/ '#0D0D0D' }}
+          style={{ color: mode === 'dark' ? '#faf0e6' : '#0D0D0D' }}
         >
           &copy; Binco website. All rights reserved.
         </footer>

@@ -37,14 +37,12 @@ const NavBar = () => {
             opacity: 0,
             y: -75,
             position: 'absolute',
-            backgroundColor: mode === 'dark' ? '#35354F' : '#eb78a9',
+            // backgroundColor: mode === 'dark' ? '#35354F' : '#eb78a9',
             height: '4rem',
             width: '100%',
             fontWeight: 'bolder',
             fontSize: '1.1rem',
             zIndex: '10',
-            display: 'flex',
-            justifyContent: 'space-between',
             borderBottom: 'thick solid',
             borderColor: mode === 'dark' ? '#4f46e5' : '#e6d7ff',
           },
@@ -53,14 +51,12 @@ const NavBar = () => {
             y: 0,
             position: 'fixed',
             top: '0',
-            backgroundColor: mode === 'dark' ? '#35354F' : '#eb78a9',
+            // backgroundColor: mode === 'dark' ? '#35354F' : '#eb78a9',
             height: '4rem',
             width: '100%',
             fontWeight: 'bolder',
             fontSize: '1.1rem',
             zIndex: '10',
-            display: 'flex',
-            justifyContent: 'space-between',
             borderBottom: 'thick solid',
             borderColor: mode === 'dark' ? '#4f46e5' : '#e6d7ff',
           },
@@ -74,15 +70,13 @@ const NavBar = () => {
           class="navbar navbar-expand-lg navbar-dark"
           style={{
             backgroundColor: mode === 'dark' ? '#352D64' : '#FEC5EB',
-            height: '4rem',
+            height: '5rem',
             width: '100%',
             fontWeight: 'bolder',
             fontSize: '1.1rem',
             // position: 'fixed',
             // top: '0',
             zIndex: '10',
-            display: 'flex',
-            justifyContent: 'space-between',
             borderBottom: 'thick solid',
             borderColor: mode === 'dark' ? '#9F7CD7' : '#EE79C6',
           }}
@@ -93,7 +87,9 @@ const NavBar = () => {
           <a
             style={{
               margin: '2rem',
-              color: mode === 'light' ? 'indigo' : 'white',
+              color: mode === 'light' ? 'black' : 'white',
+              fontSize: '2rem',
+              letterSpacing: '5px',
             }}
             class="navbar-brand"
             href="#"
@@ -116,16 +112,6 @@ const NavBar = () => {
               <li class="nav-item active">
                 <Link to={'/dashboard'} class="nav-link">
                   Dashboard
-                </Link>
-              </li>
-              <li class="nav-item">
-                <Link to={'/message'} class="nav-link">
-                  Message
-                </Link>
-              </li>
-              <li class="nav-item">
-                <Link to={'/whiteboard'} class="nav-link">
-                  Whiteboard
                 </Link>
               </li>
               <li class="nav-item">

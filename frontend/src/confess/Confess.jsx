@@ -53,6 +53,8 @@ const Confess = () => {
     'paint together and switch boards every few minutes',
     'crochet together',
     'have an anime/Kdrama marathon night',
+    'competitive wii sports',
+    'roleplay characters',
   ];
 
   const handleYesClick = () => {

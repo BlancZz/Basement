@@ -11,19 +11,7 @@ const Lover = () => {
   // const { mode } = useTheme();
 
   return (
-    <Box
-      sx={{
-        backgroundColor: '#5d79ab',
-        height: '100vh',
-        width: '100vw',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        gap: '50px',
-        padding: '20px 0',
-      }}
-    ></Box>
+    <canvas></canvas>
   );
 };
 

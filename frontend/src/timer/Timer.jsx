@@ -381,18 +381,16 @@ const Timer = () => {
             fontSize: '9rem',
           }}
         >
-          <div class="solar-timer">
-            <div class="circle">
-              <Box
-                sx={{
-                  fontSize: '3rem',
-                  paddingTop: '2rem',
-                }}
-              >
-                {earths[0]}
-              </Box>
+          <Box
+            sx={{
+              fontSize: '3rem',
+              // paddingTop: '2rem',
+            }}
+          >
+            <div class="solar-timer">
+              <div class="circle">{earths[0]}</div>
             </div>
-          </div>
+          </Box>
           <Box
             sx={{
               position: 'absolute',
