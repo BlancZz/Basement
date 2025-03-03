@@ -80,7 +80,7 @@ function Dashboard() {
               />
             </Card>
           </BrowserWindow>
-          <BrowserWindow value="2">
+          <BrowserWindow value="3">
             <Card
               id="dashboard-form"
               className="d-flex justify-content-center align-items-center"

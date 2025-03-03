@@ -123,12 +123,16 @@ const SpringModal = ({ isOpen, setIsOpen }) => {
                     Nah, go back
                   </button>
                   <button
-                    type="submit"
+                    type="button"
                     onClick={() => {
                       if (formData.data.message.trim() !== '') {
                         setIsOpen(false);
                         formData.data.name = name;
                         sendToDiscord();
+                        localStorage.setItem(
+                          'name',
+                          name !== '' ? name : 'null'
+                        );
                       }
                     }}
                     className="bg-white hover:opacity-90 transition-opacity text-indigo-600 font-semibold w-full py-2 rounded"

@@ -35,8 +35,9 @@ const PopQuote = () => {
   const [spam, setSpam] = React.useState(false);
 
   const [achieved, setAchieved] = React.useState([]);
-  const maxAchieve = 7;
+  const maxAchieve = 8;
   const [achievement, setAchievement] = React.useState('');
+  const [clicked, setClicked] = React.useState(false);
 
   const [quotes, setQuotes] = React.useState([]);
   const [quote, setQuote] = React.useState('Click! (^._.^)ノ');
@@ -47,6 +48,23 @@ const PopQuote = () => {
   const [numClicks, setNumClicks] = React.useState(0);
   const [numQuotes, setNumQuotes] = React.useState(0);
   const [rotate, setRotate] = React.useState(false);
+
+  const [hint, setHint] = React.useState(0);
+  const hints = [
+    'hint?',
+    'have you seen all three easter egg quotes with audios?',
+    'another hint?',
+    'have you spam clicked fast enough?',
+    'another hint?',
+    'one click per spartan (300)',
+    'another hint?',
+    'do you have a good quote?',
+    'another hint?',
+    'finished seeing every quote?',
+    'another hint?',
+    'before time began, there was the cube - Transformers 2007',
+    'another hint?',
+  ];
 
   function playPop() {
     if (easterAudio) {
@@ -67,7 +85,7 @@ const PopQuote = () => {
       }
     }
 
-    if (Date.now() - timer < 200) {
+    if (Date.now() - timer < 150) {
       new Audio(popAudio1).play();
 
       if (Date.now() - timer < 72 && !achieved.includes('Hax')) {
@@ -261,6 +279,17 @@ const PopQuote = () => {
           justifyContent: 'center',
           flexDirection: 'column',
         }}
+        onClick={() => {
+          if (
+            localStorage.getItem('name') != null &&
+            localStorage.getItem('name') != '' &&
+            !achieved.includes('Contributed')
+          ) {
+            setAchievement('Contributed');
+            setAchieved((achieved) => [...achieved, 'Contributed']);
+            snackBarOpen('Contributed');
+          }
+        }}
       >
         <Box
           sx={{
@@ -292,19 +321,26 @@ const PopQuote = () => {
         </Box>
         <Box
           sx={{
+            display: achieved.length !== maxAchieve ? 'flex' : 'none',
             position: 'absolute',
             top: 0,
             left: '15%',
             margin: '2rem',
-            opacity: '5%',
+            opacity: '25%',
             // color: '#448Aff',
-            transition: '0.5s ease',
+            transition: '0.2s ease',
             '&:hover': {
-              opacity: '50%',
+              opacity: '60%',
             },
+            cursor: 'pointer',
+          }}
+          onClick={() => {
+            setHint(hint < hints.length - 1 ? hint + 1 : 1);
+            console.log(hint);
+            console.log(hints[hint]);
           }}
         >
-          ( hover title )
+          ( {hints[hint]} )
         </Box>
         <Box
           sx={{
@@ -317,6 +353,19 @@ const PopQuote = () => {
           }}
         >
           <Box>
+            <Box
+              sx={{
+                display:
+                  achieved.length === maxAchieve
+                    ? !clicked
+                      ? 'flex'
+                      : 'none'
+                    : 'none',
+                opacity: '50%',
+              }}
+            >
+              ( click me )
+            </Box>
             <Box
               sx={{
                 color: achieved.length === maxAchieve ? '#ff5c5c' : 'black',
@@ -338,6 +387,8 @@ const PopQuote = () => {
                   confetti();
                   setTimer(Date.now());
                 }
+
+                setClicked(false);
               }}
             >
               <Box
