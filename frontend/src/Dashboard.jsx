@@ -111,34 +111,6 @@ function Dashboard() {
             </Card>
           </BrowserWindow>
 
-          <BrowserWindow value="0">
-            <Card
-              id="dashboard-form"
-              className="d-flex justify-content-center align-items-center"
-              onClick={() => {
-                navigate('/Lover');
-              }}
-              sx={{ cursor: 'pointer' }}
-            >
-              <img
-                style={{
-                  maxWidth: '100%',
-                  overflow: 'hidden',
-                }}
-                sx={{ overflow: 'hidden' }}
-                src={require('./assets/aitowa.png')}
-                alt="Aitowa"
-              />
-            </Card>
-          </BrowserWindow>
-        </Box>
-        <Box
-          sx={{
-            width: '100vw',
-            display: 'flex',
-            justifyContent: 'space-around',
-          }}
-        >
           <BrowserWindow value="2">
             <Card
               id="dashboard-form"
@@ -169,6 +141,34 @@ function Dashboard() {
                 // src={require('./assets/timer.png')}
                 alt="timer"
               /> */}
+            </Card>
+          </BrowserWindow>
+        </Box>
+        <Box
+          sx={{
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'space-around',
+          }}
+        >
+          <BrowserWindow value="0">
+            <Card
+              id="dashboard-form"
+              className="d-flex justify-content-center align-items-center"
+              onClick={() => {
+                navigate('/Lover');
+              }}
+              sx={{ cursor: 'pointer' }}
+            >
+              <img
+                style={{
+                  maxWidth: '100%',
+                  overflow: 'hidden',
+                }}
+                sx={{ overflow: 'hidden' }}
+                src={require('./assets/aitowa.png')}
+                alt="Aitowa"
+              />
             </Card>
           </BrowserWindow>
           <BrowserWindow value="1">

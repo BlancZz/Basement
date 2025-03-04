@@ -283,11 +283,11 @@ const PopQuote = () => {
           if (
             localStorage.getItem('name') != null &&
             localStorage.getItem('name') != '' &&
-            !achieved.includes('Contributed')
+            !achieved.includes('Contributed Quote >:3')
           ) {
-            setAchievement('Contributed');
-            setAchieved((achieved) => [...achieved, 'Contributed']);
-            snackBarOpen('Contributed');
+            setAchievement('Contributed Quote >:3');
+            setAchieved((achieved) => [...achieved, 'Contributed Quote >:3']);
+            snackBarOpen('Contributed Quote >:3');
           }
         }}
       >
@@ -379,7 +379,7 @@ const PopQuote = () => {
                   transition: 'transform 0.5s ease',
                 },
               }}
-              onClick={(e) => {
+              onClick={() => {
                 setRotate(!rotate);
                 new Audio(partyblowerAudio).play();
 
