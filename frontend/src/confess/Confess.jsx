@@ -118,7 +118,7 @@ const Confess = () => {
           cursor: 'pointer',
         }}
         onClick={() => {
-          navigate('/');
+          navigate('/Basement');
         }}
       >
         <span id="confessTItle">

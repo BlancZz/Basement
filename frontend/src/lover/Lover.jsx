@@ -143,7 +143,7 @@ const Lover = () => {
             cursor: 'pointer',
           }}
           onClick={() => {
-            navigate('/');
+            navigate('/Basement');
           }}
         >
           <Box

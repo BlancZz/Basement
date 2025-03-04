@@ -302,7 +302,7 @@ const PopQuote = () => {
             cursor: 'pointer',
           }}
           onClick={() => {
-            navigate('/');
+            navigate('/Basement');
           }}
         >
           <span id="popTItle">

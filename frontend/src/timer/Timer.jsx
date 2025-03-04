@@ -217,7 +217,7 @@ const Timer = () => {
             cursor: 'pointer',
           }}
           onClick={() => {
-            navigate('/');
+            navigate('/Basement');
           }}
         >
           <span class="owText text-center">Timer</span>
