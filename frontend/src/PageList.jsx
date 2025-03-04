@@ -45,7 +45,7 @@ const PageList = () => {
       > */}
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/PopQuote" element={<Dashboard />} />
+        <Route path="/Basement" element={<Dashboard />} />
         <Route path="/Quotes" element={<PopQuote />} />
         {/* <Route path='/game/math' element={<Maths/>} />*/}
         <Route path="/lover" element={<Lover />} />
