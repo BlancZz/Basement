@@ -52,17 +52,17 @@ const PopQuote = () => {
   const [hint, setHint] = React.useState(0);
   const hints = [
     'hint?',
-    'have you seen all three easter egg quotes with audios?',
+    'some quotes have audio :3',
     'another hint?',
-    'have you spam clicked fast enough?',
+    'canned spam',
     'another hint?',
-    'one click per spartan (300)',
+    'click click',
     'another hint?',
-    'do you have a good quote?',
+    'wise cats contribute',
     'another hint?',
-    'finished seeing every quote?',
+    'quotes are finite, so is my patience >:T',
     'another hint?',
-    'before time began, there was the cube - Transformers 2007',
+    'would you kill baby hitler if you could time travel?',
     'another hint?',
   ];
 
@@ -125,7 +125,7 @@ const PopQuote = () => {
     setTimer(Date.now());
     setMouseDown(true);
     setNumClicks(numClicks + 1);
-    if (numClicks === 300 && !achieved.includes('Click Manic')) {
+    if (numClicks === 100 && !achieved.includes('Click Manic')) {
       setAchievement('Click Manic');
       setAchieved((achieved) => [...achieved, 'Click Manic']);
       snackBarOpen('Click Manic');
