@@ -9,10 +9,13 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Example route that sends back a secret
-app.get('/api/secret', (req, res) => {
-  res.json({ message: process.env.MY_SECRET || 'No secret found' });
+app.get('/', (req, res) => {
+  res.send('🎉 is your backend running? Then you better go catch it! 🏃‍♂️');
 });
+
+// app.get('/api/secret', (req, res) => {
+//   res.json({ message: process.env.MY_SECRET || 'No secret found' });
+// });
 
 app.post('/api/discord', async (req, res) => {
   const { data } = req.body;
