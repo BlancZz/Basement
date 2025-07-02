@@ -1,4 +1,4 @@
-// backend/server.js
+const axios = require('axios');
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -41,5 +41,5 @@ app.post('/api/discord', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`✅ Backend running on http://localhost:${PORT}`);
+  console.log(`Backend running on http://localhost:${PORT}`);
 });
