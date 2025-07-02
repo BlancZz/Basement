@@ -1,0 +1,111 @@
+'use client';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion, LayoutGroup } from 'framer-motion';
+import { cn } from '../../utils/cn.ts';
+
+import { useTheme } from '../../ThemeContext.js';
+
+export const FlipWords = ({
+  words,
+  duration = 3000,
+  className,
+}: {
+  words: string[];
+  duration?: number;
+  className?: string;
+}) => {
+  const [currentWord, setCurrentWord] = useState(words[0]);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  let joined = 0;
+
+  // thanks for the fix Julian - https://github.com/Julian-AT
+  const startAnimation = useCallback(() => {
+    const word = words[words.indexOf(currentWord) + 1] || words[0];
+    setCurrentWord(word);
+    setIsAnimating(true);
+  }, [currentWord, words]);
+
+  useEffect(() => {
+    if (!isAnimating)
+      setTimeout(() => {
+        startAnimation();
+      }, duration);
+  }, [isAnimating, duration, startAnimation]);
+
+  const letterSpacing = (letter, letterNext, letterNextNext) => {
+    if (letterNext === ' ') {
+      joined = 2;
+      return letter + letterNext + letterNextNext;
+    } else if (joined == 0) {
+      return letter;
+    } else {
+      joined--;
+    }
+  };
+
+  const { mode } = useTheme();
+
+  return (
+    <AnimatePresence
+      onExitComplete={() => {
+        setIsAnimating(false);
+      }}
+    >
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 10,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 0.4,
+          ease: 'easeInOut',
+          type: 'spring',
+          stiffness: 100,
+          damping: 10,
+        }}
+        exit={{
+          opacity: 0,
+          y: -40,
+          x: 40,
+          filter: 'blur(8px)',
+          // scale: 2,
+          position: 'absolute',
+        }}
+        className={cn(
+          'z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2',
+          className
+        )}
+        key={currentWord}
+      >
+        {currentWord.split('').map((letter, index) => (
+          <motion.span
+            key={currentWord + index}
+            initial={{ opacity: 0, y: 10, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{
+              delay: index * 0.08,
+              duration: 0.4,
+            }}
+            className="inline-block"
+            style={{
+              // fontFamily: 'Verdana',
+              color: mode === 'dark' ? '#b7f3ff' : '#eb78a9',
+            }}
+          >
+            {index + 2 < currentWord.length
+              ? letterSpacing(
+                  currentWord[index],
+                  currentWord[index + 1],
+                  currentWord[index + 2]
+                )
+              : letter}
+          </motion.span>
+        ))}
+      </motion.div>
+    </AnimatePresence>
+  );
+};
