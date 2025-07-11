@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Basement/static/css/main.920e6824.css",
-    "main.js": "/Basement/static/js/main.63d9c361.js",
+    "main.css": "/Basement/static/css/main.128f7131.css",
+    "main.js": "/Basement/static/js/main.3e60f962.js",
     "static/js/496.eb2b6583.chunk.js": "/Basement/static/js/496.eb2b6583.chunk.js",
     "static/media/DarkBackground.png": "/Basement/static/media/DarkBackground.41df42db73253353e009.png",
     "static/media/LightBackground.png": "/Basement/static/media/LightBackground.32ded752719a282d39ca.png",
@@ -52,12 +52,15 @@
     "static/media/fira-sans-vietnamese-400-normal.woff": "/Basement/static/media/fira-sans-vietnamese-400-normal.04a5d0467eb9ab4523e7.woff",
     "static/media/quotes.txt": "/Basement/static/media/quotes.1552a0ac6bca3774b391.txt",
     "index.html": "/Basement/index.html",
-    "main.920e6824.css.map": "/Basement/static/css/main.920e6824.css.map",
-    "main.63d9c361.js.map": "/Basement/static/js/main.63d9c361.js.map",
+    "static/media/pattern1.svg": "/Basement/static/media/pattern1.de0bdb50e9e263fa2c9b7e12a29242d1.svg",
+    "static/media/pattern2.svg": "/Basement/static/media/pattern2.de0bdb50e9e263fa2c9b7e12a29242d1.svg",
+    "static/media/pattern3.svg": "/Basement/static/media/pattern3.de0bdb50e9e263fa2c9b7e12a29242d1.svg",
+    "main.128f7131.css.map": "/Basement/static/css/main.128f7131.css.map",
+    "main.3e60f962.js.map": "/Basement/static/js/main.3e60f962.js.map",
     "496.eb2b6583.chunk.js.map": "/Basement/static/js/496.eb2b6583.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.920e6824.css",
-    "static/js/main.63d9c361.js"
+    "static/css/main.128f7131.css",
+    "static/js/main.3e60f962.js"
   ]
 }
