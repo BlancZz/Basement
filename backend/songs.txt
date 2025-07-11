@@ -1,0 +1,17 @@
+{
+  "songs": [
+    "https://open.spotify.com/track/4rYdmzRRbhXJ5mXZz3lmHO?si=342925871a4047d0",
+    "https://open.spotify.com/track/0CZ9VJhZdayttcpvqdC2XH?si=e116f68907404fe5",
+    "https://open.spotify.com/track/3rfYb7kPhCtCpbC5tweE54?si=fd6223a8f7dc4e84"
+  ],
+  "colors1": [
+    "#718cdd",
+    "#718cdd",
+    "#718cdd"
+  ],
+  "colors2": [
+    "#eaa1b9",
+    "#eaa1b9",
+    "#eaa1b9"
+  ]
+}

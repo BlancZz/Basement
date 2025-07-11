@@ -177,9 +177,7 @@ function Dashboard() {
               className="d-flex justify-content-center align-items-center"
               sx={{ cursor: 'pointer' }}
               onClick={() => {
-                window.open(
-                  'https://gx.games/games/xinz3a/sprocks/tracks/9c1d499d-51de-416f-a689-f74c62edb08c/'
-                );
+                navigate('/Lover');
               }}
             >
               <img
@@ -193,7 +191,26 @@ function Dashboard() {
               />
             </Card>
           </BrowserWindow>
-          <BrowserWindow value="0"></BrowserWindow>
+          <BrowserWindow value="1">
+            <Card
+              id="dashboard-form"
+              className="d-flex justify-content-center align-items-center"
+              sx={{ cursor: 'pointer' }}
+              onClick={() => {
+                navigate('/WIP');
+              }}
+            >
+              <img
+                style={{
+                  maxWidth: '100%',
+                  overflow: 'hidden',
+                }}
+                sx={{ overflow: 'hidden' }}
+                // src={require('./assets/sprockets.png')}
+                alt="wip  "
+              />
+            </Card>
+          </BrowserWindow>
         </Box>
 
         <footer

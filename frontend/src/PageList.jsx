@@ -10,6 +10,7 @@ import Lover from './lover/Lover';
 import Thing from './bolleyBoll/thing';
 import Confess from './confess/Confess';
 import Timer from './timer/Timer';
+import Wip from './wip/Wip';
 
 // import { ThemeContext } from './ThemeContext';
 
@@ -51,6 +52,7 @@ const PageList = () => {
         <Route path="/lover" element={<Lover />} />
         <Route path="/confess" element={<Confess />} />
         <Route path="/timer" element={<Timer />} />
+        <Route path="/WIP" element={<Wip />} />
         <Route path="/thing" element={<Thing />} />
       </Routes>
 
